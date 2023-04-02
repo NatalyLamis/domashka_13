@@ -1,0 +1,739 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,500,700&display=swap");
+
+body{
+    font-family: "Poppins";
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: rgb(11, 4, 58);
+}
+.wrapper {
+    overflow: clip;
+    min-height: 100%;
+    background: url(../img/bg-orchid4.webp) center/cover;
+}
+.wrapper_car{
+    overflow: clip;
+    min-height: 100%;
+    padding: 10px;
+    background: url(../img/sky3.webp) center/cover;
+}
+.wrap_trac{
+    max-width: 1400px;
+    height: 800px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background: url(../img/sky3.webp) center/cover no-repeat;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.hogwarts{
+    width: 630px;
+    height: 420px;
+    display: inline-block;
+    background: url(../img/hog5.webp) center/contain no-repeat;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    transform: translate(0px, 500px);
+    opacity: 0;
+    animation: hogwarts 2s ease-out 5s 1 normal forwards;
+}
+.road{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    background: url(../img/road6.webp) center/cover no-repeat;
+}
+.comment{
+    width: 208px;
+    height: 75px;
+    padding-top: 2px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 350px;
+    left: 350px;
+    animation: comment 1.8s linear 2.5s 1 normal forwards;
+    transform: scale(1.2);
+    opacity: 0;
+}
+.comment::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 70px;
+}
+.tractor{
+    position: absolute;
+    top: 440px;
+    left: 0px;
+    transform: scale(0.6);
+    animation: tractor-ride 5s ease 1 normal forwards;
+}
+.cabine{
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    display: inline-block;
+}
+.cabine__roof{
+    width: 250px;
+    height: 25px;
+    background-color: #ff0000;
+}
+.cabine__mirror{
+    display: inline-block;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 26px;
+    left: 225px;
+}
+.mirror__base{
+    width: 70px;
+    height: 5px;
+    background-color: #000000;
+}
+.mirror__glass{
+    width: 20px;
+    height: 40px;
+    background-color: #656565;
+    border: 1px solid black;
+}
+.cabine__top{
+    width: 250px;
+    border-bottom: 200px solid #ff0000;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+.cabine__window-back{
+    width: 200px;
+    border-bottom: 175px solid rgba(165,200,242,1);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: 35px;
+    left: 25px;
+}
+.cabine__window-front{
+    width: 200px;
+    border-bottom: 175px solid rgba(165,200,242,0.5);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: 35px;
+    left: 25px;
+}
+.cabine__bottom{
+    width: 250px;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,170,105,1) 46%, rgba(255,0,0,1) 100%);
+    position: absolute;
+    top: 210px;
+    left: 0;
+    z-index: 1;
+}
+.cabine__door-handle{
+    width: 40px;
+    height: 15px;
+    background-color: #656565;
+    border: 1px solid black;
+    position: absolute;
+    top: 234px;
+    left: 188px;
+    z-index: 2;
+}
+.owl{
+    width: 275px;
+    height: 275px;
+    display: inline-block;
+    background: url(../img/owl.webp) center/contain no-repeat;
+    position: absolute;
+    top: 42px;
+    left: -14;
+    opacity: 0;
+    transform: translate(0px, 100px);
+    animation: owl-appear 0.5s linear 2s 1 normal forwards;
+}
+.steering-wheel{
+    display: inline-block;
+    transform-origin: 100% 50%;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 117px;
+    left: 143px;
+    z-index: 0;
+}
+.steering-wheel__oval{
+    width: 80px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.steering-wheel__base{
+    width: 10px;
+    height: 60px;
+    background-color: #000;
+    margin-left: 34px;
+}
+.engine{
+    position: absolute;
+    top: 210px;
+    left: 400px;
+}
+.engine__base {
+    width: 175px;
+    height: 200px;
+    border-left: 1px solid black;
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(255,170,105,1) 46%, rgba(255,0,0,1) 100%);
+}
+.engine__base::before{
+    content:"";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid red;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 174px;
+}
+.engine__base::after{
+    content:"";
+    display: inline-block;
+    width: 179px;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    top: 45px;
+    left: 0;
+}
+.engine__headlight{
+    width: 50px;
+    border-bottom: 29px solid rgb(38, 38, 38);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(-94deg);
+    position: absolute;
+    top: 80px;
+    left: 172px;
+}
+.pipe{
+    position: absolute;
+    top: -139px;
+    left: 107px;
+}
+.pipe__base{
+    width: 30px;
+    height: 60px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+.pipe__middle{
+    width: 10px;
+    height: 50px;
+    background-color: #000000;
+}
+.pipe__top{
+    width: 10px;
+    height: 30px;
+    background-color: #000000;
+    transform-origin: 0 100%;
+    transform: rotate(30deg);
+}
+.pipe__common{
+    margin-left: 10px;
+}
+.grille__item{
+    width: 5px;
+    height: 50px;
+    background-color: #656565;
+    transform: skewX(-20deg);
+    border: 1px solid black;
+    position: absolute;
+    z-index: 1;
+}
+.itemg-one{
+    top: 45px;
+    left: 23px;
+}
+.itemg-two{
+    top: 45px;
+    left: 38px;
+}
+.itemg-three{
+    top: 45px;
+    left: 53px;
+}
+.itemg-four{
+    top: 45px;
+    left: 68px;
+}
+.itemg-five{
+    top: 45px;
+    left: 83px;
+}
+.itemg-six{
+    top: 45px;
+    left: 98px;
+}
+.wheel{
+    position: absolute;
+    top: 239px;
+    left: 26px;
+    z-index: 2;
+    display: inline-block;
+    animation: wheel-ride 1.5s ease 0s 1 normal none;
+}
+.wheel__tyre{
+    width: 250px;
+    height: 250px;
+    background-color: #0c0c0c;
+    border-radius: 50%;
+    outline: 7px dashed black;
+}
+.wheel__dysc{
+    width: 150px;
+    height: 150px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 49px;
+    z-index: 1;
+}
+.wheel__center{
+    width: 50px;
+    height: 50px;
+    background-color: #870606;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 99px;
+    z-index: 2;
+}
+.wheel_axle{
+    width: 14px;
+    height: 14px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    top: 118px;
+    left: 117px;
+    z-index: 3;
+}
+.bolt__item {
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+}
+.bolt-one{
+    top: 71px;
+    left: 119px;
+}
+.bolt-two{
+    top: 85px;
+    left: 155px;
+}
+.bolt-three{
+    top: 119px;
+    left: 169px;
+}
+.bolt-four{
+    top: 155px;
+    left: 155px;
+}
+.bolt-five{
+    top: 169px;
+    left: 119px;
+}
+.bolt-six{
+    top: 155px;
+    left: 85px;
+}
+.bolt-seven{
+    top: 119px;
+    left: 70px;
+}
+.bolt-eight{
+    top: 85px;
+    left: 85px;
+}
+.wheel_small{
+    transform: scale(0.7);
+    display: inline-block;
+    position: absolute;
+    top: 279px;
+    left: 408px;
+    animation: wheel-small-ride 1.5s ease 0s 1 normal none;
+}
+.tractor-gryf{
+    position: absolute;
+    top: 440px;
+    left: 250px;
+    transform: scale(0.6);
+    opacity: 0;
+    animation: tractor-gryf-ride 6.5s linear 3s 1 normal forwards;
+}
+.cabine__roof_gryf{
+    background: url(../img/gryf1.webp) center/cover no-repeat;
+}
+.mirror__glass_gryf{
+    background-color: #ebb026;
+}
+.cabine__top_gryf{
+    border-bottom: 200px solid #600404;
+}
+.cabine__bottom_gryf{
+    background: url(../img/gryf7.webp) center/cover no-repeat;
+}
+.cabine__door-handle_gryf{
+    background-color: #ebb026;
+}
+.owl_gryf{
+    width: 310px;
+    height: 310px;
+    display: inline-block;
+    background: url(../img/owl-gryf1.webp) center/contain no-repeat;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: -30px;
+}
+.engine__base_gryf{
+    background: url(../img/gryffindor.webp) center/cover no-repeat;
+}
+.engine__base_gryf::before{
+    content:"";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid #600404;
+    border-right: 20px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 174px;
+}
+.engine__base_gryf::after{
+    content:"";
+    display: inline-block;
+    width: 178px;
+    height: 3px;
+    background-color: #000000;
+    position: absolute;
+    top: 45px;
+    left: 0;
+}
+.engine__headlight_gryf{
+    border-bottom: 29px solid #ebb026;
+}
+.pipe-gryf__base{
+    background-color: #ebb026;
+    border: 1px solid black;
+}
+.pipe-gryf__middle{
+    background-color: #ebb026;
+    border: 1px solid black;
+}
+.pipe-gryf__top{
+    background-color: #ebb026;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+}
+.wheel-gryf{
+    position: absolute;
+    top: 239px;
+    left: 26px;
+    z-index: 2;
+    display: inline-block;
+    animation: wheel-ride 4s linear 6s 1 normal none;
+}
+.wheel__dysc_gryf{
+    background: url(../img/gryf5.webp) center/contain no-repeat;
+}
+.wheel__center_gryf{
+    background-color: #600404;
+}
+.wheel-gryf_small{
+    transform: rotate(0deg) scale(0.7);
+    display: inline-block;
+    position: absolute;
+    top: 279px;
+    left: 408px;
+    animation: wheel-small-ride 4s linear 6s 1 normal none;
+}
+@keyframes tractor-ride{
+    0%{
+        transform: translate(-325px, 0px) scale(0.7);
+    }
+    30%{
+        transform: translate(250px, 0px) scale(0.7);
+    }
+    80%{
+        transform: translate(250px, 0px) scale(0.7);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(250px, 0px) scale(0.7);
+        opacity: 0;
+    }
+}
+@keyframes wheel-ride{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes wheel-small-ride{
+    0%{
+        transform: rotate(0deg) scale(0.7);
+    }
+    100%{
+        transform: rotate(360deg) scale(0.7);
+    }
+}
+@keyframes owl-appear{
+    0%{
+        transform: translate(0px, 100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+@keyframes comment{
+    0%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    30%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    70%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+@keyframes hogwarts{
+    0%{
+        transform: translate(0px, 500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px, 0px) scale(1.9);
+        opacity: 1;
+    }
+}
+@keyframes tractor-gryf-ride{
+    0%{
+        transform: translate(0px, 0px) scale(0.7);
+        opacity: 0;
+    }
+    35%{
+        transform: translate(0px, 0px) scale(0.7);
+        opacity: 1;
+    }
+    50%{
+        transform: translate(0px, 0px) scale(0.7);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(1200px, 0px) scale(0.7);
+        opacity: 1;
+    }
+}
+
+[class*="__container"]{
+    width: 1050px;
+    padding: 15px 15px 0px 15px;
+    margin: 0 auto;
+}
+.practice__block{
+    display: inline-block;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.practice__block:nth-child(odd){
+    margin-right: 114px;
+}
+.block__title{
+    width: 450px;
+    background-color: rgba(230, 227, 216, 0.8);
+    border-top: 1px solid #2e2d2b;
+    border-left: 1px solid #2e2d2b;
+    border-right: 1px solid #2e2d2b;
+    text-align: center;
+}
+.block__box{
+    width: 450px;
+    padding: 10px;
+    background-color: rgb(177, 175, 168, 0.8);
+    border: 1px solid #2e2d2b;
+    font-size: 14px;
+    line-height: 1;
+    color: #2e2d2b;
+    text-align: center;
+}
+.block__box>*:not(:last-child){
+    margin-bottom: 10px;
+}
+.block__item{
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    background-color: #ae72e9;
+    border: 1px solid black;
+}
+.block__item:hover{
+    animation-play-state: paused;
+}
+.item-one{
+    animation: rotate 3s linear 0s 5 normal forwards;
+}
+.item-two{
+    animation: rotate 3s linear 0s 5 reverse forwards;
+}
+.item-three{
+    animation: rotate 3s linear 0s 5 alternate forwards;
+}
+.item-four{
+    animation: rotate 3s linear 0s 5 alternate-reverse forwards;
+}
+.item-five{
+    animation: rotate 3s linear 1s 5 alternate forwards;
+}
+.item-six{
+    animation: circle 3s ease 0s infinite alternate;
+}
+.item-seven{
+    animation: circle 3s ease-in 0s infinite alternate;
+}
+.item-eight{
+    animation: circle 3s ease-out 0s infinite alternate;
+}
+.item-nine{
+    animation: circle 3s ease-in-out 0s infinite alternate;
+}
+.item-ten{
+    animation: circle 3s linear 0s infinite alternate;
+}
+.block__box_height-140{
+    height: 140px;
+}
+.item-eleven{
+    transition: height 0.8s ease 0s, width 1.2s ease 0.8s, background-color 0.8s ease 1.8s;
+}
+.block__box:hover .item-eleven{
+    width: 420px;
+    height: 120px;
+    background-color: #3a0074;
+}
+.item-twelve{
+    width: 427px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+.item-twelve::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1b0037;
+    opacity: 0.5;
+    transition: opacity 0.8s;
+    z-index: 2;
+}
+.item-twelve img{
+	max-width: 100%;
+	transition: transform 0.8s;
+}
+.item-twelve:hover img{
+	transform: scale(1.1);
+}
+.item-twelve:hover::before{
+	opacity: 0;
+}
+@keyframes rotate{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    30%{
+        transform: translate(170px, 0px) rotate(0deg) scale(1);
+    }
+    50%{
+        transform: translate(170px, 0px) rotate(360deg) scale(0.7);
+    }
+    65%{
+        transform: translate(170px, 0px) rotate(360deg) scale(0.7);
+    }
+    100%{
+        transform: translate(340px, 0px) rotate(360deg) scale(1);
+    }
+}
+@keyframes circle{
+    0%{
+        transform: translate(0px, 0px);
+        border-radius: 0%;
+    }
+    100%{
+        transform: translate(340px, 0px);
+        border-radius: 50%;
+        color: #ffffff;
+        background-color: #3a0074;
+    }
+}
+.button{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.button-link{
+    background-color: #696762;
+    padding: 10px 30px;
+    border: 2px solid #1b0037;
+    color: #ddc0f9;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.5s;
+}
+.button-link:hover{
+    background-color: #ae72e9;
+    padding: 10px 30px;
+    border: 2px solid #1b0037;
+    color: #1b0037;
+}
+.button-link:active{
+    background-color: #e2d1f4;
+    padding: 10px 30px;
+    border: 2px solid #0c0018;
+    color: #0c0018;
+}
