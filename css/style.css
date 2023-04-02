@@ -162,7 +162,7 @@ body{
     background: url(../img/owl.webp) center/contain no-repeat;
     position: absolute;
     top: 42px;
-    left: -14;
+    left: -14px;
     opacity: 0;
     transform: translate(0px, 100px);
     animation: owl-appear 0.5s linear 2s 1 normal forwards;
